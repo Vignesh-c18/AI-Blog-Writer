@@ -16,7 +16,7 @@ The application autonomously researches, generates, validates, and stores high-q
 - AI-powered content validation
 - Automatic Markdown generation
 - Local JSON & Markdown storage
-- FastAPI-ready backend
+- FastAPI backend
 - Modular project architecture
 
 ---
@@ -213,11 +213,7 @@ output/
 
 ---
 
-# 📸 Screenshots
-
-> Add screenshots here.
-
-Example:
+# Screenshots
 
 - Home Page
   <img width="1877" height="892" alt="Homepage" src="https://github.com/user-attachments/assets/124071bc-6743-4d09-8373-61c0539661b1" />
@@ -236,9 +232,7 @@ Example:
 
 **N. Vignesh**
 
-GitHub:
-https://github.com/Vignesh-c18
-
+GitHub: [Vignesh-c18](https://github.com/Vignesh-c18)
 ---
 
 # 📄 License
