@@ -1,0 +1,16 @@
+[
+  {
+    "id": "blogs/ml/explainable-ai-tutorial.md",
+    "category": "ml",
+    "topic": "Explainable AI: Interpreting Machine Learning Models",
+    "subtopics": "Model Interpretability Techniques, Model Explainability Methods, Transparency in Deep Learning, Fairness and Bias Detection",
+    "title": "Explainable AI",
+    "description": "Learn about explainable AI, model interpretability, and fairness in machine learning",
+    "date": "2026-07-28",
+    "tags": [
+      "ml"
+    ],
+    "readTime": "4 min",
+    "file": "blogs/ml/explainable-ai-tutorial.md"
+  }
+]

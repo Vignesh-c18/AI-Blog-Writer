@@ -15,6 +15,11 @@ class R2StorageService:
     def __init__(self):
         """Initializes the R2 client using central application settings."""
         self.bucket_name = app_settings.r2.BUCKET_NAME.strip(' ="\'')
+        if not app_settings.r2.ACCOUNT_ID:
+              self.client = None
+              self.bucket_name = None
+              return
+      
         self.client = boto3.client(
             service_name="s3",
             endpoint_url=f"https://{app_settings.r2.ACCOUNT_ID}.r2.cloudflarestorage.com",
@@ -38,7 +43,20 @@ class R2StorageService:
             return None
 
     def put_object(self, key: str, data: str, content_type: str = "text/plain") -> bool:
-        """Uploads string data to R2."""
+        """Uploads string data to R2 or saves it locally if R2 is disabled."""
+
+        if self.client is None:
+            from pathlib import Path
+
+            local_path = Path("output") / key
+            local_path.parent.mkdir(parents=True, exist_ok=True)
+
+            with open(local_path, "w", encoding="utf-8") as f:
+                f.write(data)
+
+            print(f"  ✅ Saved locally: {local_path}")
+            return True
+
         try:
             self.client.put_object(
                 Bucket=self.bucket_name,
