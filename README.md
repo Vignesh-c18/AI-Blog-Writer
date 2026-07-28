@@ -1,8 +1,8 @@
 # AI Blog Writer
 
-AI Blog Writer is a full-stack Multi-Agent AI platform that automates technical blog generation. The system researches topics, plans article structure, generates long-form technical content, validates quality, generates metadata, and exports blogs in Markdown format using a LangGraph-based workflow.
----
+A Multi-Agent AI Content Generation Platform
 
+AI Blog Writer is a full-stack Multi-Agent AI platform that automates technical blog generation. The system researches topics, plans article structure, generates long-form technical content, validates content quality, generates metadata, and exports blogs in Markdown format through a LangGraph-based workflow.
 ## Features
 
 - Multi-Agent AI Workflow using LangGraph
