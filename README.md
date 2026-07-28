@@ -23,22 +23,17 @@ The application autonomously researches, generates, validates, and stores high-q
 
 # Architecture
 
-```text
-                     User
-                       │
-           ┌───────────┴───────────┐
-           │                       │
-     Tutorial Agent          News Agent
-           │                       │
-           └───────────┬───────────┘
-                       │
-               Validator Agent
-                       │
-                Local File Storage
-                       │
-                      END
-```
+```mermaid
+flowchart TD
+    A[User Request] --> B[Tutorial Agent]
+    A --> C[News Agent]
 
+    B --> D[Validator Agent]
+    C --> D
+
+    D --> E[Markdown Generator]
+    E --> F[Local JSON Storage]
+```
 ---
 
 # ⚙️ Workflow
