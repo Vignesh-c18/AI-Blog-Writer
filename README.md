@@ -228,7 +228,11 @@ Example:
   <img width="1877" height="892" alt="Homepage" src="https://github.com/user-attachments/assets/124071bc-6743-4d09-8373-61c0539661b1" />
 
 - Generated Blog
+  <img width="1890" height="865" alt="Article" src="https://github.com/user-attachments/assets/26d85195-6035-46ef-b903-04ea8cb3b832" />
+
 - Terminal Execution
+  <img width="773" height="546" alt="Terminal" src="https://github.com/user-attachments/assets/641257f7-0ef1-41ce-9dd8-e23990d3e248" />
+
 - LangGraph Workflow
 
 ---
