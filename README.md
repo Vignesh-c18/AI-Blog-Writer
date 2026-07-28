@@ -231,7 +231,7 @@ Example:
   <img width="1862" height="865" alt="Article" src="https://github.com/user-attachments/assets/ee541130-5b27-4032-ae9a-e521f9bf08c5" />
 
 - Terminal Execution
-  <img width="1800" height="800" alt="Terminal" src="https://github.com/user-attachments/assets/641257f7-0ef1-41ce-9dd8-e23990d3e248" />
+  <img width="1600" height="600" alt="Terminal" src="https://github.com/user-attachments/assets/641257f7-0ef1-41ce-9dd8-e23990d3e248" />
 
 - LangGraph Workflow
 
