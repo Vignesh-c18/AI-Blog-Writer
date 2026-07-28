@@ -1,16 +1,58 @@
 [
   {
-    "id": "blogs/ml/explainable-ai-tutorial.md",
+    "id": "blogs/ml/explainable-ai-techniques.md",
     "category": "ml",
-    "topic": "Explainable AI: Interpreting Machine Learning Models",
-    "subtopics": "Model Interpretability Techniques, Model Explainability Methods, Transparency in Deep Learning, Fairness and Bias Detection",
+    "topic": "Explainable AI: Unlocking Transparency in Machine Learning Models",
+    "subtopics": "Model Interpretability Techniques, Bias Detection and Mitigation, Model Explainability Metrics, Transparency in Deep Learning",
     "title": "Explainable AI",
-    "description": "Learn about explainable AI, model interpretability, and fairness in machine learning",
-    "date": "2026-07-28",
+    "description": "Unlock transparency in machine learning models with explainable AI techniques",
+    "date": "2026-07-29",
     "tags": [
       "ml"
     ],
     "readTime": "4 min",
-    "file": "blogs/ml/explainable-ai-tutorial.md"
+    "file": "blogs/ml/explainable-ai-techniques.md"
+  },
+  {
+    "id": "blogs/ml/adversarial-robustness-in-ml.md",
+    "category": "ml",
+    "topic": "Adversarial Robustness in Machine Learning",
+    "subtopics": "Adversarial Attack Methods, Defense Strategies for Neural Networks, Robustness Evaluation Metrics, Transferable Adversarial Examples",
+    "title": "Adversarial Robustness",
+    "description": "Learn about adversarial robustness in machine learning, including attack methods and defense strategies.",
+    "date": "2026-07-29",
+    "tags": [
+      "ml"
+    ],
+    "readTime": "4 min",
+    "file": "blogs/ml/adversarial-robustness-in-ml.md"
+  },
+  {
+    "id": "blogs/ml/graph-neural-networks.md",
+    "category": "ml",
+    "topic": "Graph Neural Networks",
+    "subtopics": "Introduction to Graph Neural Networks, Graph Convolutional Networks, Graph Attention Networks, Applications of Graph Neural Networks",
+    "title": "Graph Neural Networks",
+    "description": "Learn about Graph Neural Networks, their applications and how they work",
+    "date": "2026-07-29",
+    "tags": [
+      "ml"
+    ],
+    "readTime": "4 min",
+    "file": "blogs/ml/graph-neural-networks.md"
+  },
+  {
+    "id": "blogs/ml/transfer-learning-in-machine-learning.md",
+    "category": "ml",
+    "topic": "Transfer Learning in Machine Learning",
+    "subtopics": "Introduction to Transfer Learning, Fine-Tuning Pre-Trained Models, Domain Adaptation Techniques, Few-Shot Learning Applications",
+    "title": "Transfer Learning",
+    "description": "Unlock the power of pre-trained models with transfer learning",
+    "date": "2026-07-29",
+    "tags": [
+      "ml"
+    ],
+    "readTime": "4 min",
+    "file": "blogs/ml/transfer-learning-in-machine-learning.md"
   }
 ]

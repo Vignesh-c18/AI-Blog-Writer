@@ -17,7 +17,7 @@ def validator_node(state: BlogState) -> BlogState:
             "revision_needed": False,
             "title": "Dry Run Generated Title",
             "slug": "dry-run-generated",
-            "md_path": "r2://dry-run",
+            "md_path": "output/dry-run",
             "description": "Dry run generic description.",
         }
 
@@ -71,7 +71,7 @@ def validator_node(state: BlogState) -> BlogState:
             "revision_count": current_revision + 1
         }
         
-    print(f"  [AGENT] Draft APPROVED! Generating Metadata and Saving to R2...")
+    print("  [AGENT] Draft APPROVED! Generating metadata and saving locally...")
     
     # Save to R2
     slug_value = re.sub(r"[^\w\s-]", "", slug_value).strip("-")
@@ -104,5 +104,5 @@ def validator_node(state: BlogState) -> BlogState:
         "title": title,
         "description": description,
         "slug": slug_value,
-        "md_path": f"r2://{md_relative}"
+        "md_path": f"output/{md_relative}"
     }
