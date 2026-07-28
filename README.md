@@ -225,6 +225,8 @@ output/
 Example:
 
 - Home Page
+  <img width="1877" height="892" alt="Homepage" src="https://github.com/user-attachments/assets/124071bc-6743-4d09-8373-61c0539661b1" />
+
 - Generated Blog
 - Terminal Execution
 - LangGraph Workflow
