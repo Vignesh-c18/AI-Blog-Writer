@@ -1,29 +1,31 @@
 # AI Blog Writer
 
-An intelligent Multi-Agent AI Blog Generation platform that automatically researches trending topics, generates high-quality technical articles, validates content quality, and prepares them for publishing.
-
-Built using Python, LangGraph, Groq/Gemini, and modern AI workflows.
-
+AI Blog Writer is a full-stack Multi-Agent AI platform that automates technical blog generation. The system researches topics, plans article structure, generates long-form technical content, validates quality, generates metadata, and exports blogs in Markdown format using a LangGraph-based workflow.
 ---
 
 ## Features
 
-- Multi-Agent AI Architecture
-- Automated Topic Research
-- AI-Powered Technical Blog Generation
-- Content Validation
-- Markdown Blog Generation
-- Web-Based Blog Interface
-- Modular Agent Design
-- Easy API Integration
-
----
+- Multi-Agent AI Workflow using LangGraph
+- Automated Topic Research using Tavily Search API
+- AI-powered Technical Blog Generation
+- Article Planning and Structuring
+- Content Validation and Quality Review
+- Metadata Generation (Title, Description, Slug)
+- Markdown Blog Export
+- Local JSON Storage
+- Responsive Web Interface
+- Modular Architecture
+- Easy LLM Provider Integration
 
 ## Tech Stack
 
-- Python 3.12+
+- Python
 - LangGraph
-- Groq API / Google Gemini
+- Google Gemini / Groq
+- FastAPI
+- React.js
+- Next.js
+- Tailwind CSS
 - Tavily Search API
 - HTML
 - CSS
@@ -36,19 +38,28 @@ Built using Python, LangGraph, Groq/Gemini, and modern AI workflows.
 ## Project Architecture
 
 ```
-             User Input
+                 User
+                  │
+                  ▼
+          Tutorial Agent
+                  │
+                  ▼
+          Planning Agent
                   │
                   ▼
           Research Agent
                   │
                   ▼
-          Content Writer
+           Writer Agent
                   │
                   ▼
-         Content Validator
+         Validator Agent
                   │
                   ▼
-         Blog Generation
+       Metadata Generation
+                  │
+                  ▼
+    Markdown + JSON Storage
                   │
                   ▼
           Web Interface
@@ -163,40 +174,58 @@ http://localhost:8000
 
 ## AI Workflow
 
-The application follows a Multi-Agent workflow.
+### Tutorial Agent
+
+- Selects the blog domain
+- Initializes the workflow
+
+### Planning Agent
+
+- Creates article outline
+- Organizes section flow
 
 ### Research Agent
 
-- Searches latest AI topics
-- Collects reliable information
+- Searches latest technical information
+- Collects relevant references
 
 ### Writer Agent
 
-- Generates technical articles
-- Produces structured blog content
+- Generates long-form technical articles
+- Produces Markdown content
 
 ### Validator Agent
 
-- Reviews generated content
-- Improves readability and quality
+- Reviews article quality
+- Checks formatting and readability
+
+### Metadata Generator
+
+- Generates title
+- Description
+- Slug
+
+### Storage
+
+- Saves Markdown files
+- Maintains article metadata in JSON
 
 ---
 
 ## Future Improvements
 
+- Multi-LLM Support
 - SEO Optimization Agent
-- Image Generation Support
+- Image Generation
 - PDF Export
-- Blog Scheduling
-- Multi-Language Support
-- Admin Dashboard
-- Streamlit Interface
-
+- Authentication
+- Analytics Dashboard
+- Docker Deployment
 ---
 
 ## Author
 
-Vignesh
+N. Vignesh
 
 ---
 
