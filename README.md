@@ -21,7 +21,7 @@ AI Blog Writer is a full-stack Multi-Agent AI platform that automates technical 
 
 - Python
 - LangGraph
-- Google Gemini / Groq
+- LLMs(Google Gemini / Groq)
 - FastAPI
 - React.js
 - Next.js
@@ -35,7 +35,7 @@ AI Blog Writer is a full-stack Multi-Agent AI platform that automates technical 
 
 ---
 
-## Project Architecture
+## System Architecture
 
 ```
                  User
@@ -56,7 +56,7 @@ AI Blog Writer is a full-stack Multi-Agent AI platform that automates technical 
          Validator Agent
                   │
                   ▼
-       Metadata Generation
+          Metadata Agent
                   │
                   ▼
     Markdown + JSON Storage
@@ -199,7 +199,7 @@ http://localhost:8000
 - Reviews article quality
 - Checks formatting and readability
 
-### Metadata Generator
+### Metadata Agent
 
 - Generates title
 - Description
@@ -221,6 +221,17 @@ http://localhost:8000
 - Authentication
 - Analytics Dashboard
 - Docker Deployment
+- Cloud Storage Integration
+---
+
+## Key Highlights
+
+- Autonomous Multi-Agent workflow using LangGraph
+- Modular LLM service supporting Google Gemini and Groq
+- Automated web research with Tavily Search API
+- Markdown blog generation with metadata creation
+- Local JSON-based article storage
+- Responsive frontend with FastAPI backend
 ---
 
 ## Author
