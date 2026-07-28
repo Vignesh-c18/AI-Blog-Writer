@@ -1,237 +1,211 @@
 # AI Blog Writer
 
-A Multi-Agent AI Content Generation Platform
+A Multi-Agent AI Blog Generation Platform built using Python, LangGraph, Google Gemini/Groq, FastAPI, and Tavily Search API.
 
-AI Blog Writer is a full-stack Multi-Agent AI platform that automates technical blog generation. The system researches topics, plans article structure, generates long-form technical content, validates content quality, generates metadata, and exports blogs in Markdown format through a LangGraph-based workflow.
+## Overview
+
+AI Blog Writer is an AI-powered content generation platform that automates the creation of high-quality technical tutorials and AI news articles.
+
+The application uses a LangGraph-based multi-agent workflow where specialized agents collaborate to generate, validate, and store publish-ready Markdown blog posts.
+
+The system supports both autonomous topic generation and user-provided topics while ensuring high-quality content through an AI validation loop.
+
+---
+
 ## Features
 
-- Multi-Agent AI Workflow using LangGraph
-- Automated Topic Research using Tavily Search API
-- AI-powered Technical Blog Generation
-- Article Planning and Structuring
-- Content Validation and Quality Review
-- Metadata Generation (Title, Description, Slug)
-- Markdown Blog Export
+- Multi-Agent Workflow using LangGraph
+- Tutorial Blog Generation
+- AI News Blog Generation
+- Google Gemini & Groq LLM Support
+- Tavily Search API Integration
+- AI-powered Content Validation
+- Automatic Markdown Export
 - Local JSON Storage
+- FastAPI Backend
 - Responsive Web Interface
-- Modular Architecture
-- Easy LLM Provider Integration
+- Modular Agent Architecture
+
+---
+
+## Architecture
+
+```text
+                    User
+                      │
+          ┌───────────┴───────────┐
+          │                       │
+    Tutorial Agent          News Agent
+          │                       │
+          └───────────┬───────────┘
+                      │
+               Validator Agent
+                      │
+               Markdown Storage
+                      │
+                     END
+```
+
+---
+
+## Workflow
+
+### Tutorial Agent
+
+- Selects or accepts a tutorial topic
+- Generates comprehensive technical tutorial articles
+- Supports autonomous topic generation
+- Produces Markdown blog content
+
+### News Agent
+
+- Fetches the latest AI news
+- Uses Tavily Search API for research
+- Generates AI news articles
+- Produces Markdown blog content
+
+### Validator Agent
+
+- Reviews generated content
+- Checks quality and completeness
+- Requests revisions when required
+- Approves final content for publishing
+
+### Storage
+
+- Saves Markdown blog files
+- Stores article metadata locally
+- Maintains blog history
+
+---
 
 ## Tech Stack
 
+### Backend
+
 - Python
-- LangGraph
-- LLMs(Google Gemini / Groq)
 - FastAPI
-- React.js
-- Next.js
-- Tailwind CSS
+- LangGraph
+
+### AI
+
+- Google Gemini
+- Groq
+- Prompt Engineering
+
+### Search
+
 - Tavily Search API
+
+### Frontend
+
 - HTML
 - CSS
 - JavaScript
-- Git
-- GitHub
+
+### Storage
+
+- Local JSON Storage
+- Markdown Files
 
 ---
 
-## System Architecture
+## Project Structure
 
-```
-                 User
-                  │
-                  ▼
-          Tutorial Agent
-                  │
-                  ▼
-          Planning Agent
-                  │
-                  ▼
-          Research Agent
-                  │
-                  ▼
-           Writer Agent
-                  │
-                  ▼
-         Validator Agent
-                  │
-                  ▼
-          Metadata Agent
-                  │
-                  ▼
-    Markdown + JSON Storage
-                  │
-                  ▼
-          Web Interface
-```
-
----
-
-## Folder Structure
-
-```
-AI-Blog-Writer/
-
+```text
+blogboard/
 │
-├── blogboard/
-│   ├── agents/
-│   ├── config/
-│   ├── graph/
-│   ├── services/
-│   ├── tools/
-│   ├── web/
-│   └── run.py
+├── agents/
+│   ├── tutorial_agent/
+│   ├── news_agent/
+│   └── validator_agent/
 │
-├── pyproject.toml
-├── package.json
-├── README.md
-└── .env.example
+├── graph/
+│
+├── services/
+│
+├── web/
+│
+├── output/
+│
+└── config/
 ```
 
 ---
 
 ## Installation
 
-Clone the repository
+### Clone the repository
 
 ```bash
-git clone https://github.com/Vignesh-c18/AI-Blog-Writer.git
+git clone https://github.com/your-username/AI-Blog-Writer.git
 ```
 
-Move into the project
+### Install dependencies
 
 ```bash
-cd AI-Blog-Writer
+pip install -r requirements.txt
 ```
 
-Create virtual environment
+### Configure environment variables
 
-```bash
-uv venv
-```
-
-Activate environment
-
-Windows
-
-```bash
-.venv\Scripts\activate
-```
-
-Linux / macOS
-
-```bash
-source .venv/bin/activate
-```
-
-Install dependencies
-
-```bash
-uv sync
-```
-
----
-
-## Environment Variables
-
-Create a `.env` file and add your API keys.
+Create a `.env` file and add:
 
 ```env
-GROQ_API_KEY=your_key
+GOOGLE_API_KEY=YOUR_GEMINI_API_KEY
+GROQ_API_KEY=YOUR_GROQ_API_KEY
+TAVILY_API_KEY=YOUR_TAVILY_API_KEY
+```
 
-TAVILY_API_KEY=your_key
+### Run the application
+
+```bash
+python main.py
 ```
 
 or
 
-```env
-GEMINI_API_KEY=your_key
+```bash
+uvicorn app:app --reload
 ```
+
+(depending on your project entry point)
 
 ---
 
-## Run the Project
+## Output
 
-Start the backend
+The generated blogs are stored as:
 
-```bash
-python blogboard/run.py
-```
-
-Run the frontend
-
-```bash
-python -m http.server 8000 --directory blogboard/web
-```
-
-Open your browser
-
-```
-http://localhost:8000
-```
+- Markdown (.md)
+- Local JSON metadata
 
 ---
 
-## AI Workflow
+## Highlights
 
-### Tutorial Agent
-
-- Selects the blog domain
-- Initializes the workflow
-
-### Planning Agent
-
-- Creates article outline
-- Organizes section flow
-
-### Research Agent
-
-- Searches latest technical information
-- Collects relevant references
-
-### Writer Agent
-
-- Generates long-form technical articles
-- Produces Markdown content
-
-### Validator Agent
-
-- Reviews article quality
-- Checks formatting and readability
-
-### Metadata Agent
-
-- Generates title
-- Description
-- Slug
-
-### Storage
-
-- Saves Markdown files
-- Maintains article metadata in JSON
+- Multi-Agent architecture using LangGraph
+- Automated technical tutorial generation
+- AI news generation with live web research
+- AI-powered validation loop
+- Modular and extensible design
+- Markdown export
+- Local article storage
 
 ---
 
 ## Future Improvements
 
+- Planning Agent
+- Research Agent
+- Writer Agent
+- Metadata Agent
 - Multi-LLM Support
-- SEO Optimization Agent
-- Image Generation
+- SEO Optimization
 - PDF Export
-- Authentication
-- Analytics Dashboard
-- Docker Deployment
 - Cloud Storage Integration
----
+- User Authentication
 
-## Key Highlights
-
-- Autonomous Multi-Agent workflow using LangGraph
-- Modular LLM service supporting Google Gemini and Groq
-- Automated web research with Tavily Search API
-- Markdown blog generation with metadata creation
-- Local JSON-based article storage
-- Responsive frontend with FastAPI backend
 ---
 
 ## Author
