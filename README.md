@@ -1,119 +1,205 @@
-# <a href="https://kalyanm45.github.io/BlogBoard-AI-Blog-Generator/">BlogBoard — Autonomous AI Article Generator</a>
+# AI Blog Writer
 
-<p align="center"> <img src="https://img.shields.io/github/license/KalyanM45/BlogBoard-AI-Blog-Generator?style=ROUND" alt="License" /> <img src="https://img.shields.io/github/stars/KalyanM45/BlogBoard-AI-Blog-Generator?style=ROUND" alt="Stars" /> <img src="https://img.shields.io/github/forks/KalyanM45/BlogBoard-AI-Blog-Generator?style=ROUND" alt="Forks" /> <img src="https://img.shields.io/github/issues/KalyanM45/BlogBoard-AI-Blog-Generator?style=ROUND"alt="Issues" />
-</p>
+An intelligent Multi-Agent AI Blog Generation platform that automatically researches trending topics, generates high-quality technical articles, validates content quality, and prepares them for publishing.
 
-## About The Project
+Built using Python, LangGraph, Groq/Gemini, and modern AI workflows.
 
-BlogBoard is an end-to-end, fully automated blogging platform. It autonomously schedules, writes, formats, and publishes deep-dive technical articles on Machine Learning and Artificial Intelligence directly to a fast, static frontend website.
+---
 
-Powered by **LangGraph** for stateful workflow execution and **Groq** for blazing-fast LLM inference, it ensures that high-quality, zero-fluff, production-grade articles are generated and deployed automatically via **GitHub Actions**.
+## Features
 
-## Library Requirements
+- Multi-Agent AI Architecture
+- Automated Topic Research
+- AI-Powered Technical Blog Generation
+- Content Validation
+- Markdown Blog Generation
+- Web-Based Blog Interface
+- Modular Agent Design
+- Easy API Integration
 
- - Python 3.12+
- - langgraph>=0.2.20
- - groq>=0.11.0
- - python-dotenv>=1.0.1
- - uv (for dependency management)
+---
 
-## Getting Started
+## Tech Stack
 
-This will help you understand how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+- Python 3.12+
+- LangGraph
+- Groq API / Google Gemini
+- Tavily Search API
+- HTML
+- CSS
+- JavaScript
+- Git
+- GitHub
 
-## Installation Steps
+---
 
-### Installation from GitHub
+## Project Architecture
 
-Follow these steps to install and set up the project directly from the GitHub repository:
+```
+             User Input
+                  │
+                  ▼
+          Research Agent
+                  │
+                  ▼
+          Content Writer
+                  │
+                  ▼
+         Content Validator
+                  │
+                  ▼
+         Blog Generation
+                  │
+                  ▼
+          Web Interface
+```
 
-1. **Clone the Repository**
-   - Open your terminal or command prompt.
-   - Navigate to the directory where you want to install the project.
-   - Run the following command to clone the GitHub repository:
-     ```bash
-     git clone https://github.com/KalyanM45/BlogBoard-AI-Blog-Generator.git
-     ```
+---
 
-2. **Create a Virtual Environment** (Recommended)
-   - It's a good practice to create a virtual environment to manage project dependencies. Run the following command:
-     ```bash
-     uv venv
-     ```
+## Folder Structure
 
-3. **Activate the Virtual Environment**
-   - Activate the virtual environment based on your operating system:
-       ```bash
-       # On Linux/Mac:
-       source .venv/bin/activate
-       # On Windows:
-       .venv\Scripts\activate
-       ```
+```
+AI-Blog-Writer/
 
-4. **Install Dependencies**
-   - Navigate to the project directory:
-     ```bash
-     cd BlogBoard-AI-Blog-Generator
-     ```
-   - Run the following command to install project dependencies:
-     ```bash
-     uv pip install -r backend/requirements.txt
-     ```
+│
+├── blogboard/
+│   ├── agents/
+│   ├── config/
+│   ├── graph/
+│   ├── services/
+│   ├── tools/
+│   ├── web/
+│   └── run.py
+│
+├── pyproject.toml
+├── package.json
+├── README.md
+└── .env.example
+```
 
-5. **Run the Project**
-   - Start the backend pipeline by running the appropriate command:
-     ```bash
-     python backend/run.py
-     ```
+---
 
-6. **Access the Project**
-   - Serve the frontend locally using Python's built-in HTTP server:
-     ```bash
-     python -m http.server 8000 --directory frontend
-     ```
-   - Open a web browser and navigate to `http://localhost:8000`.
+## Installation
 
+Clone the repository
 
-## API Key Setup
+```bash
+git clone https://github.com/Vignesh-c18/AI-Blog-Writer.git
+```
 
-To use this project, you need an API key from Groq to power the Large Language Model inference. Follow these steps to obtain and set up your API key:
+Move into the project
 
-1. **Get API Key:**
-   - Visit the Groq Console at [console.groq.com](https://console.groq.com/).
-   - Follow the instructions to create an account and obtain your API key.
+```bash
+cd AI-Blog-Writer
+```
 
-2. **Set Up API Key:**
-   - Create a file named `.env` in the project root.
-   - Add your API key to the `.env` file:
-     ```dotenv
-     GROQ_API_KEY=your_api_key_here
-     ```
+Create virtual environment
 
-   **Note:** Keep your API key confidential. Do not share it publicly or expose it in your code.<br>
+```bash
+uv venv
+```
 
-## Contributing
+Activate environment
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Windows
 
-• **Report bugs**: If you encounter any bugs, please let us know. Open up an issue and let us know the problem.
+```bash
+.venv\Scripts\activate
+```
 
-• **Contribute code**: If you are a developer and want to contribute, follow the instructions below to get started!
+Linux / macOS
 
-1. Fork the Project
-2. Create your Feature Branch
-3. Commit your Changes
-4. Push to the Branch
-5. Open a Pull Request
+```bash
+source .venv/bin/activate
+```
 
-• **Suggestions**: If you don't want to code but have some awesome ideas, open up an issue explaining some updates or improvements you would like to see!
+Install dependencies
 
-#### Don't forget to give the project a star! Thanks again!
+```bash
+uv sync
+```
+
+---
+
+## Environment Variables
+
+Create a `.env` file and add your API keys.
+
+```env
+GROQ_API_KEY=your_key
+
+TAVILY_API_KEY=your_key
+```
+
+or
+
+```env
+GEMINI_API_KEY=your_key
+```
+
+---
+
+## Run the Project
+
+Start the backend
+
+```bash
+python blogboard/run.py
+```
+
+Run the frontend
+
+```bash
+python -m http.server 8000 --directory blogboard/web
+```
+
+Open your browser
+
+```
+http://localhost:8000
+```
+
+---
+
+## AI Workflow
+
+The application follows a Multi-Agent workflow.
+
+### Research Agent
+
+- Searches latest AI topics
+- Collects reliable information
+
+### Writer Agent
+
+- Generates technical articles
+- Produces structured blog content
+
+### Validator Agent
+
+- Reviews generated content
+- Improves readability and quality
+
+---
+
+## Future Improvements
+
+- SEO Optimization Agent
+- Image Generation Support
+- PDF Export
+- Blog Scheduling
+- Multi-Language Support
+- Admin Dashboard
+- Streamlit Interface
+
+---
+
+## Author
+
+Vignesh
+
+---
 
 ## License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](LICENSE) file for details.<br>
-
-## Acknowledgements
-
-We'd like to extend our gratitude to all individuals and organizations who have played a role in the development and success of this project. Your support, whether through contributions, inspiration, or encouragement, has been invaluable. Thank you for being a part of our journey.
+This project is released under the MIT License.
